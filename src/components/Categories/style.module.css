@@ -4,9 +4,9 @@
     gap: 12px;
     align-items: flex-start;
     box-sizing: border-box;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
-    user-select: none;
+    -ms-overflow-style: none;
 }
 
 .item, .active {

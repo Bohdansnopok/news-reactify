@@ -1,9 +1,9 @@
 import styles from "./style.module.css";
 
-const Skeleton = ({ count = 1, type = "banner", direction = 'column'}) => {
+const Skeleton = ({ count = 1, type = "banner" }) => {
     return (
         count > 1 ? (
-            <ul className={direction === 'column' ? styles.columnList : styles.rowList}>
+            <ul className={styles.list}>
                 {[...Array(count)].map((_, index) => (
                     <li
                         key={index}
