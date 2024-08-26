@@ -1,0 +1,20 @@
+[33mcommit 556bc96d754a35cccb1adc4e9f0651a9c056f21a[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Merge: d5569ac c3ffc1e
+Author: Bohdan <117108974+Bohdansnopok@users.noreply.github.com>
+Date:   Wed Aug 7 15:01:46 2024 +0300
+
+    Merge pull request #1 from Bohdansnopok/feature-R-1
+    
+    add skeleton
+
+[33mcommit c3ffc1ed696c8e25c5c3d3059fda497580285494[m[33m ([m[1;31morigin/feature-R-1[m[33m, [m[1;32mfeature-R-1[m[33m)[m
+Author: bohdan.snopok <snopokbogdan3@gmail.com>
+Date:   Wed Aug 7 14:54:15 2024 +0300
+
+    add skeleton
+
+[33mcommit d5569ac24d7c799efac4a8cf294d62b2f8729df4[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m, [m[1;32mfeature-branch[m[33m)[m
+Author: bohdan.snopok <snopokbogdan3@gmail.com>
+Date:   Sun Aug 4 22:21:32 2024 +0300
+
+    Initial commit
