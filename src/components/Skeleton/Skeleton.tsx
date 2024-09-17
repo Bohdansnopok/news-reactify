@@ -1,6 +1,13 @@
 import styles from "./style.module.css";
+import {DirectionType, SkeletonType} from "../../interfaces/interfaces";
 
-const Skeleton = ({ count = 1, type = "banner", direction = 'column'}) => {
+interface Props {
+    type?: SkeletonType,
+    count?: number,
+    direction?: DirectionType
+}
+
+const Skeleton = ({ count = 1, type = "banner", direction = 'column'}: Props) => {
     return (
         count > 1 ? (
             <ul className={direction === 'column' ? styles.columnList : styles.rowList}>
