@@ -1,8 +1,13 @@
 import styles from './style.module.css'
 import React, {useRef} from "react";
 
-const Slider = ({children, step = 200}) => {
-    const sliderRef = useRef(null)
+interface Props {
+    children: React.ReactElement
+    step?: number
+}
+
+const Slider = ({children, step = 200}: Props) => {
+    const sliderRef = useRef<HTMLElement | null>(null)
 
     const scrollLeft = () => {
         const duration = 120; // Время выполнения в миллисекундах
@@ -11,6 +16,7 @@ const Slider = ({children, step = 200}) => {
         let currentStep = 0;
 
         const interval = setInterval(() => {
+            if (!sliderRef.current) return;
             sliderRef.current.scrollLeft -= pixelsPerStep;
             currentStep++;
 
@@ -27,6 +33,7 @@ const Slider = ({children, step = 200}) => {
         let currentStep = 0;
 
         const interval = setInterval(() => {
+            if (!sliderRef.current) return;
             sliderRef.current.scrollLeft += pixelsPerStep;
             currentStep++;
 
