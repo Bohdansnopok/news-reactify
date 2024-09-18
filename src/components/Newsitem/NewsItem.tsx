@@ -1,6 +1,6 @@
-import { formatTimeAgo } from "../../helpers/formateTimeAgo";
+import { formatTimeAgo } from "../../helpers/formateTimeAgo"
 import styles from './style.module.css';
-import {INews} from "../../interfaces/interfaces";
+import {INews} from "../../interfaces/interfaces"
 
 interface Props {
     item: INews;

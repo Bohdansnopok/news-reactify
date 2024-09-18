@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import NewsItem from "../Newsitem/Newsitem";
+import NewsItem from "../Newsitem/NewsItem";
 import withSkeleton from "../../helpers/hocs/withSkeleton";
 import {INews} from "../../interfaces/interfaces";
 
