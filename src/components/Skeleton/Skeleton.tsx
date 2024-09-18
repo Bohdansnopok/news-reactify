@@ -1,4 +1,5 @@
 import styles from "./style.module.css";
+import React from 'react';
 import {DirectionType, SkeletonType} from "../../interfaces/interfaces";
 
 interface Props {

@@ -1,4 +1,5 @@
 import { formatTimeAgo } from "../../helpers/formateTimeAgo"
+import React from 'react';
 import styles from './style.module.css';
 import {INews} from "../../interfaces/interfaces"
 

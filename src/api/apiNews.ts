@@ -1,12 +1,12 @@
-import axios from "axios";
-import {CategoriesApiResponse, NewsApiResponse, ParamsType} from "../interfaces/interfaces";
-
+import axios, { AxiosError } from "axios";
+import { CategoriesApiResponse, NewsApiResponse, ParamsType } from "../interfaces/interfaces";
+import React from 'react';
 const BASE_URL = import.meta.env.VITE_NEWS_BASE_API_URL;
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 export const getNews = async (params?: ParamsType): Promise<NewsApiResponse> => {
     try {
-        const {page_number = 1, page_size = 10, category, keywords} = params || {}
+        const { page_number = 1, page_size = 10, category, keywords } = params || {};
 
         const response = await axios.get<NewsApiResponse>(`${BASE_URL}search`, {
             params: {
@@ -19,8 +19,12 @@ export const getNews = async (params?: ParamsType): Promise<NewsApiResponse> => 
         });
         return response.data;
     } catch (error) {
-        console.log("Error fetching news:", error.response ? error.response.data : error.message);
-        return {news: [], page: 1, status: "error"};
+        if (error instanceof AxiosError) {
+            console.log("Error fetching news:", error.response ? error.response.data : error.message);
+        } else {
+            console.log("An unexpected error occurred:", error);
+        }
+        return { news: [], page: 1, status: "error" };
     }
 };
 
@@ -33,9 +37,12 @@ export const getLatestNews = async (): Promise<NewsApiResponse> => {
         });
         return response.data;
     } catch (error) {
-        console.log("Error fetching news:", error.response ? error.response.data : error.message);
-        return {news: [], page: 1, status: "error"};
-
+        if (error instanceof AxiosError) {
+            console.log("Error fetching latest news:", error.response ? error.response.data : error.message);
+        } else {
+            console.log("An unexpected error occurred:", error);
+        }
+        return { news: [], page: 1, status: "error" };
     }
 };
 
@@ -48,7 +55,11 @@ export const getCategories = async (): Promise<CategoriesApiResponse> => {
         });
         return response.data;
     } catch (error) {
-        console.log("Error fetching news:", error.response ? error.response.data : error.message);
-        return {categories: [], description: '', status: "error"};
+        if (error instanceof AxiosError) {
+            console.log("Error fetching categories:", error.response ? error.response.data : error.message);
+        } else {
+            console.log("An unexpected error occurred:", error);
+        }
+        return { categories: [], description: '', status: "error" };
     }
 };
